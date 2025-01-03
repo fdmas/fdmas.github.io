@@ -599,14 +599,13 @@ header, .context-menu, .megamenu-content, footer{
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  /* 悬浮下拉菜单的样式 */
+  /* 下拉菜单的容器 */
   .dropdown {
-    position: fixed; /* 或者 position: absolute; */
-    top: 50px; /* 距离顶部50px */
-    right: 50px; 
-    z-index: 1000; /* 确保菜单在最上层 */
+    position: relative; /* 让下拉内容以按钮为基准定位 */
+    float: right; /* 使容器靠页面右侧 */
+    margin-top: 10px; /* 调整顶部间距 */
   }
-  /* 用于触发下拉菜单的按钮样式 */
+  /* 按钮样式 */
   .dropbtn {
     cursor: pointer;
     padding: 10px;
@@ -617,32 +616,41 @@ header, .context-menu, .megamenu-content, footer{
   /* 下拉内容的样式 */
   .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f9f9f9; /* 背景颜色 */
-    min-width: 160px; /* 最小宽度 */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* 阴影效果 */
-    z-index: 1; /* 确保下拉内容在按钮之上 */
+    position: absolute; /* 基于父级的相对定位 */
+    top: 100%; /* 紧贴按钮下方 */
+    right: 0; /* 对齐到右侧 */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* 确保在最上层 */
   }
   /* 下拉内容中的链接样式 */
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block; /* 使链接填满整个区域 */
+    display: block;
   }
-  /* 鼠标悬停在链接上时的样式 */
-  .dropdown-content a:hover {background-color: #f1f1f1;}
+  /* 鼠标悬停链接的样式 */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
   /* 显示下拉内容 */
-  .show {display: block;}
+  .show {
+    display: block;
+  }
 </style>
 
 
-<!-- 触发下拉菜单的按钮 -->
-<button class="dropbtn" onclick="toggleDropdown()" style="float:right">Language</button>
-<!-- 下拉菜单内容 -->
-<div id="dropdownMenu" class="dropdown-content" style="float:right">
-  <a href="https://fdmas.github.io">English</a>
-  <a href="https://fdmas.github.io/zh.html">中文</a>
+<!-- 下拉菜单容器 -->
+<div class="dropdown">
+  <!-- 按钮 -->
+  <button class="dropbtn" onclick="toggleDropdown()">Language</button>
+  <!-- 下拉菜单内容 -->
+  <div id="dropdownMenu" class="dropdown-content">
+    <a href="https://fdmas.github.io">English</a>
+    <a href="https://fdmas.github.io/zh.html">中文</a>
+  </div>
 </div>
 <script>
 // 切换下拉菜单的显示状态
