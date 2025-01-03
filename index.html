@@ -588,44 +588,6 @@ header, .context-menu, .megamenu-content, footer{
     background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
-/* 下拉按钮样式 */
-.dropbtn {    
-	background-color: #4CAF50;    color: white;    
-	padding: 16px;    font-size: 16px;    
-	border: none;    cursor: pointer;
-}
-/* 容器 <div> - 需要定位下拉内容 */
-.dropdown {    
-    position: relative;    
-    display: inline-block;
-}
-/* 下拉内容 (默认隐藏) */
-.dropdown-content {    
-    display: none;    
-    position: absolute;    
-    background-color: #f9f9f9;    
-	min-width: 160px;    
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-/* 下拉菜单的链接 */
-.dropdown-content a {    
-    color: black;    
-	padding: 12px 16px;    
-    text-decoration: none;    
-	display: block;
-}
-/* 鼠标移上去后修改下拉菜单链接颜色 */
-.dropdown-content a:hover {
-    background-color: #f1f1f1
-}
-/* 在鼠标移上去后显示下拉菜单 */
-.dropdown:hover .dropdown-content {    
-	display: block;
-}
-/* 当下拉内容显示后修改下拉按钮的背景颜色 */
-.dropdown:hover .dropbtn {    
-	background-color: #3e8e41;
-}
 
 
 </style><title>Fudan MAS</title>
@@ -639,6 +601,59 @@ header, .context-menu, .megamenu-content, footer{
     	<p>
             <a href="https://fdmas.github.io/zh.html">中文</a>    
     	</p>
-</details><h1 id='img-srcmaspng-altimage-20250103130027216-stylezoom4--fudan-mas'><img src="/MAS.png" alt="image-20250103130027216" style="zoom:4%;" /><span> </span><a href='https://fdmas.github.io'><span>Fudan MAS</span></a></h1><h2 id='introduction'><span>Introduction</span></h2><p><span>We are Multimedia &amp; Artifical Intelligence Security laboratory from the School of Computer Science in Fudan University.</span></p><p><span>The laboratory consists of three faculties (</span><a href='https://fdmas.github.io/team/xpzhang.html'><span>Zhang Xinpeng</span></a><span>, </span><a href='https://tomzqian.github.io/'><span>Qian Zhenxing</span></a><span>, </span><a href='https://blazelisheng.github.io/'><span>Li Sheng</span></a><span>), some </span><a href='https://fdmas.github.io/team/wlpeng.html'><span>postdoctoral fellows</span></a><span>, and many </span><a href='https://fdmas.github.io/team/'><span>Ph.D. &amp; master students</span></a><span>. MAS lab focuses on multimedia and artificial intelligence security, including topics of </span><strong><span>information hiding</span></strong><span>, </span><strong><span>multimedia forensics</span></strong><span>, </span><strong><span>artificial intelligence</span></strong><span> and </span><strong><span>multimedia applications</span></strong><span>. MAS lab has published over 400 academic papers many of which are published in the journals and conferences like IEEE TPAMI, TIFS, TIP, TDSC, TCSVT, TMM, TCYB, ICCV, NeurIPS, AAAI, IJCAI, and ACM MM.</span></p><p><span>Feel free to follow and support Fudan MAS Laboratory!</span></p><h2 id='news'><span>News</span></h2><p><span>[Dec 21, 2024] Congratulations to Zhaojun Guo and Wenqi Li for their papers being accepted by ICASSP 2025!</span></p><p><span>[Dec 10, 2024] Congratulations to Yuliang Xue, Lei Tan, Xiujian Liang for their papers being accepted by AAAI 2025!</span></p><p><span>[Oct 4, 2024] Congratulations to Zhaojun Guo for her paper being accepted by ACM MM Asia 2024!</span></p><p><span>[Sep 26, 2024] Congratulations to Junqiang Huang for his paper being accepted by NeurIPS 2024!</span></p><p><span>[Jul 27, 2024] Congratulations to Xiaoxiao Hu for her paper being accepted by IEEE TIFS!</span></p><p><span>[Jul 16, 2024] Congratulations to Jialiang Li, Haoyue Wang, Xuntao Liu, Yuzhou Yang, Guobiao Li, Xueying Mao, Xiaoxiao Hu, Ge Luo and Yuchen Ma for their papers being accepted by ACM MM 2024!</span></p><p><span>[Jul 4, 2024] Congratulations to Ysuzhou Yang and Yiran Xu for their papers being accepted by ECAI 2024!</span></p><p><span>[Feb 27, 2024] Congratulations to Guobiao Li for his paper being accepted by CVPR 2024!</span></p><p><a href='https://fdmas.github.io/news/'><span>more</span></a></p><h2 id='research'><span>Research</span></h2><p><span>Information Hiding</span></p><p><span>Multimedia Forensics</span></p><p><span>Security of Artificial Intelligence</span></p><p><span>Digital Watermarking</span></p><p><span>Medical Image Analysis</span></p><p><span>Computer Vision for Culture &amp; Tourism</span></p><p><img src="/WeChat.png" alt="image-20250103124747105" style="zoom: 33%;" /></p><center>Official WeChat Account</center><p>&nbsp;</p></div></div>
+</details><html>
+<meta charset="utf-8">
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover, .dropdown:hover, .dropbtn {
+    background-color: #111;
+}
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<body><ul>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Language</a>
+    <div class="dropdown-content">
+      <a href="https://fdmas.github.io">English</a>
+      <a href="https://fdmas.github.io/zh.html">中文</a>
+    </div>
+  </div>
+</ul></body>
+</html><p>&nbsp;</p><h1 id='img-srcmaspng-altimage-20250103130027216-stylezoom4--fudan-mas'><img src="/MAS.png" alt="image-20250103130027216" style="zoom:4%;" /><span> </span><a href='https://fdmas.github.io'><span>Fudan MAS</span></a></h1><h2 id='introduction'><span>Introduction</span></h2><p><span>We are Multimedia &amp; Artifical Intelligence Security laboratory from the School of Computer Science in Fudan University.</span></p><p><span>The laboratory consists of three faculties (</span><a href='https://fdmas.github.io/team/xpzhang.html'><span>Zhang Xinpeng</span></a><span>, </span><a href='https://tomzqian.github.io/'><span>Qian Zhenxing</span></a><span>, </span><a href='https://blazelisheng.github.io/'><span>Li Sheng</span></a><span>), some </span><a href='https://fdmas.github.io/team/wlpeng.html'><span>postdoctoral fellows</span></a><span>, and many </span><a href='https://fdmas.github.io/team/'><span>Ph.D. &amp; master students</span></a><span>. MAS lab focuses on multimedia and artificial intelligence security, including topics of </span><strong><span>information hiding</span></strong><span>, </span><strong><span>multimedia forensics</span></strong><span>, </span><strong><span>artificial intelligence</span></strong><span> and </span><strong><span>multimedia applications</span></strong><span>. MAS lab has published over 400 academic papers many of which are published in the journals and conferences like IEEE TPAMI, TIFS, TIP, TDSC, TCSVT, TMM, TCYB, ICCV, NeurIPS, AAAI, IJCAI, and ACM MM.</span></p><p><span>Feel free to follow and support Fudan MAS Laboratory!</span></p><h2 id='news'><span>News</span></h2><p><span>[Dec 21, 2024] Congratulations to Zhaojun Guo and Wenqi Li for their papers being accepted by ICASSP 2025!</span></p><p><span>[Dec 10, 2024] Congratulations to Yuliang Xue, Lei Tan, Xiujian Liang for their papers being accepted by AAAI 2025!</span></p><p><span>[Oct 4, 2024] Congratulations to Zhaojun Guo for her paper being accepted by ACM MM Asia 2024!</span></p><p><span>[Sep 26, 2024] Congratulations to Junqiang Huang for his paper being accepted by NeurIPS 2024!</span></p><p><span>[Jul 27, 2024] Congratulations to Xiaoxiao Hu for her paper being accepted by IEEE TIFS!</span></p><p><span>[Jul 16, 2024] Congratulations to Jialiang Li, Haoyue Wang, Xuntao Liu, Yuzhou Yang, Guobiao Li, Xueying Mao, Xiaoxiao Hu, Ge Luo and Yuchen Ma for their papers being accepted by ACM MM 2024!</span></p><p><span>[Jul 4, 2024] Congratulations to Ysuzhou Yang and Yiran Xu for their papers being accepted by ECAI 2024!</span></p><p><span>[Feb 27, 2024] Congratulations to Guobiao Li for his paper being accepted by CVPR 2024!</span></p><p><a href='https://fdmas.github.io/news/'><span>more</span></a></p><h2 id='research'><span>Research</span></h2><p><span>Information Hiding</span></p><p><span>Multimedia Forensics</span></p><p><span>Security of Artificial Intelligence</span></p><p><span>Digital Watermarking</span></p><p><span>Medical Image Analysis</span></p><p><span>Computer Vision for Culture &amp; Tourism</span></p><p><img src="/WeChat.png" alt="image-20250103124747105" style="zoom: 33%;" /></p><center>Official WeChat Account</center><p>&nbsp;</p></div></div>
 </body>
 </html>
