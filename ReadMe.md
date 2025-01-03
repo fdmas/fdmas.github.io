@@ -1,1 +1,1 @@
-# vue-echarts-map
+#  official website of Fudan MAS
