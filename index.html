@@ -1,664 +1,552 @@
-<!doctype html>
+<!DOCTYPE html>
+<!-- saved from url=(0018)http://usslab.org/ -->
 <html>
+
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Standard Meta -->
 
-<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
-.mac-os-11 { --title-bar-height:28px; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-.typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) {
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li blockquote { margin: 1rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  .typora-export #write { break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-  .is-mac table { break-inside: avoid; }
-  .typora-export-show-outline .typora-export-sidebar { display: none; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-.MathJax_ref { fill: currentcolor; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) {
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-.md-expand mark .md-meta { opacity: 0.3 !important; }
-mark .md-meta { color: rgb(0, 0, 0); }
-@media print {
-  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
-}
-.md-diagram-panel .messageText { stroke: none !important; }
-.md-diagram-panel .start-state { fill: var(--node-fill); }
-.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
-.md-fences.md-fences-math { font-size: 1em; }
-.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background: inherit; }
-.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
-.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
-.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
-.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) {
-  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
-}
-@media screen and (max-width: 800px) {
-  .typora-export-sidebar { display: none; }
-}
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
-.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
-.outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
-.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
-.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
-.outline-expander:hover::before { content: ""; }
-.outline-h1 > .outline-item { padding-left: 0px; }
-.outline-h2 > .outline-item { padding-left: 1em; }
-.outline-h3 > .outline-item { padding-left: 2em; }
-.outline-h4 > .outline-item { padding-left: 3em; }
-.outline-h5 > .outline-item { padding-left: 4em; }
-.outline-h6 > .outline-item { padding-left: 5em; }
-.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
-.outline-label:hover { text-decoration: underline; }
-.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
-.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
-.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
-.outline-children { display: none; }
-.info-panel-tab-wrapper { display: none; }
-.outline-item-open > .outline-children { display: block; }
-.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
-.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
-.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
-.typora-export-collapse-outline .outline-children { display: none; }
-.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
-.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
-.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
-.md-inline-math-container mjx-container { zoom: 0.95; }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properties -->
+    <title>复旦大学多媒体智能安全实验室</title>
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="复旦大学多媒体智能安全实验室;Fudan MAS;信息隐藏;真伪检测;AI安全;Fudan University">
+    <link rel="stylesheet" type="text/css" href="./css/semantic.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/MAS.png">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a69414783eb5d55f003e52981876f677";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+            /* 给固定顶部菜单留出空间 */
+        }
 
+        .hidden.menu {
+            display: none;
+        }
 
-:root {
-    --side-bar-bg-color: #fafafa;
-    --control-text-color: #777;
-}
+        .masthead.segment {
+            min-height: 600px;
+            padding: 1em 0em;
+            background-color: red;
+        }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
 
-/* open-sans-regular - latin-ext_latin */
-  /* open-sans-italic - latin-ext_latin */
-    /* open-sans-700 - latin-ext_latin */
-    /* open-sans-700italic - latin-ext_latin */
-  html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-}
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+            color: red;
 
-body {
-    font-family: "Times New Roman","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
-}
+        }
 
-#write {
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
-}
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
 
-@media only screen and (min-width: 1400px) {
-	#write {
-		max-width: 1024px;
-	}
-}
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
 
-@media only screen and (min-width: 1800px) {
-	#write {
-		max-width: 1200px;
-	}
-}
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
 
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
-}
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
 
-a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
-h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
 
-/*@media print {
-    .typora-export h1,
-    .typora-export h2 {
-        border-bottom: none;
-        padding-bottom: initial;
-    }
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
 
-    .typora-export h1::after,
-    .typora-export h2::after {
-        content: "";
-        display: block;
-        height: 100px;
-        margin-top: -96px;
-        border-top: 1px solid #eee;
-    }
-}*/
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
 
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-}
+        .ui.vertical.stripe p {
+            font-size: 1.33rem;
+        }
 
-li p.first {
-    display: inline-block;
-}
-ul,
-ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
-}
-blockquote blockquote {
-    padding-right: 0;
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border: 0px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #ffffff;
-}
-table th {
-    font-weight: bold;
-    border: 0px solid #ffffff;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table td {
-    border: 0px solid #ffffff;
-    margin: 0;
-    padding: 6px 13px;
-}
-table th:first-child,
-table td:first-child {
-    margin-top: 0;
-}
-table th:last-child,
-table td:last-child {
-    margin-bottom: 0;
-}
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
 
-.CodeMirror-lines {
-    padding-left: 4px;
-}
+        .quote.stripe.segment {
+            padding: 0em;
+        }
 
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
-}
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
 
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
+        .footer.segment {
+            padding: 5em 0em;
+        }
 
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
-}
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
 
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
 
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
 
-.md-task-list-item > input {
-  margin-left: -1.3em;
-}
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
 
-@media print {
-    html {
-        font-size: 13px;
-    }
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-    pre {
-        word-wrap: break-word;
-    }
-}
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
 
-.md-fences {
-	background-color: #f8f8f8;
-}
-#write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
-}
+            .masthead.segment {
+                min-height: 350px;
+            }
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
-}
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
 
-.md-mathjax-midline {
-    background: #fafafa;
-}
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
 
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
-}
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
-    border-radius: 3px;
-    padding: 2px 0px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
-}
+        @media only screen and (max-width: 700px) {
 
-.md-tag {
-    color: #a7a7a7;
-    opacity: 1;
-}
+            .ui.fixed.menu {
+                display: none !important;
+            }
 
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
-}
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
 
-.sidebar-tabs {
-    border-bottom: none;
-}
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
 
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-}
-
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
-}
-
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
-}
-
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
-}
-
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
-    visibility: visible;
-}
-
-.mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
-    background-color: var(--side-bar-bg-color);
-}
-
-.md-lang {
-    color: #b4654d;
-}
-
-/*.html-for-mac {
-    --item-hover-bg-color: #E6F0FE;
-}*/
-
-#md-notification .btn {
-    border: 0;
-}
-
-.dropdown-menu .divider {
-    border-color: #e5e5e5;
-    opacity: 0.4;
-}
-
-.ty-preferences .window-content {
-    background-color: #fafafa;
-}
-
-.ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
-}
-
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
-}
+        }
 
 
 
-</style><title>Fudan MAS</title>
+
+        .logo.image {
+            width: 100px;
+            margin-right: 1px;
+        }
+
+        .galary {
+            margin-top: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 600rpx;
+            background-color: white
+        }
+
+        .beian:hover {
+            color: white;
+        }
+
+        .beian {
+            color: grey;
+        }
+
+        .list {
+            font-size: 1.33rem;
+            line-height: 150%;
+        }
+
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        .mobile-title {
+            display: none !important;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .mobile-title {
+                display: block !important;
+            }
+
+
+        }
+
+
+        /* 代表工作样式 */
+        .research-area {
+            margin-bottom: 40px;
+        }
+
+        .area-title {
+            font-size: 1.8em;
+            color: #133271;
+            margin-bottom: 20px;
+            border-left: 4px solid #133271;
+            padding-left: 10px;
+        }
+
+        .publication {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .pub-image {
+            flex: 0 0 180px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .pub-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-title {
+            font-size: 1.33rem;
+            font-weight: bold;
+            color: #133271;
+            text-decoration: none;
+        }
+
+        .pub-title:hover {
+            text-decoration: underline;
+            color: #1e4696;
+        }
+
+        .pub-meta {
+            font-size: 1.2em;
+            color: #666;
+            margin: 6px 0;
+        }
+
+        .pub-description {
+            font-size: 1.2em;
+            color: #444;
+        }
+
+        .conference-label {
+            position: absolute;
+            top: 5px;
+            left: -5px;
+            background-color: #00369f;
+            color: white;
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 3px;
+            display: inline-block;
+            height: 20px;
+            text-align: center;
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .publication {
+                flex-direction: column;
+            }
+
+            .pub-image {
+                margin-bottom: 10px;
+                margin-right: 0;
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/visibility.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/transition.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    // autoplay: 2500,
+                });
+            });
+    </script>
 </head>
-<body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''>
+
+<body>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="./images/MAS_logo.png"> 复旦大学多媒体智能安全实验室
+            </a>
+            <a class="active item" href="./index.html" style="font-size: 1.33rem;">首页</a>
+            <!-- <a class="item" href="./projects.html">科研成果</a> -->
+            <a class="item" href="./publications.html" style="font-size: 1.33rem;">论文发表</a>
+            <a class="item" href="./opensources.html" style="font-size: 1.33rem;">开源项目</a>
+            <!-- <a class="item" href="./publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+            <!-- <a class="item" href="./member.html">团队成员</a> -->
+
+            <a class="right item dropdown-toggle" href="./en/index.html">
+                <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32">
+                    <path
+                        d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                        p-id="8069"></path>
+                    <path
+                        d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                        p-id="8070"></path>
+                    <path
+                        d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical sidebar menu">
+        <div class="item">
+            <a href="./" class="ui logo icon image">
+                <img src="./images/MAS_logo.png">
+            </a>
+            <!-- <a href="./index.html"><b>复旦大学多媒体智能安全实验室</b></a> -->
+        </div>
+        <a class="active item" href="./index.html" style="font-size: 1.33rem;">首页</a>
+        <!-- <a class="item" href="./projects.html">科研成果</a> -->
+        <a class="item" href="./publications.html" style="font-size: 1.33rem;">论文发表</a>
+        <a class="item" href="./opensources.html" style="font-size: 1.33rem;">开源项目</a>
+        <!-- <a class="item" href="./publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+        <!-- <a class="item" href="./member.html">团队成员</a> -->
+
+        <a class="right item dropdown-toggle" href="./en/index.html">
+            <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                height="32">
+                <path
+                    d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                    p-id="8069"></path>
+                <path
+                    d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                    p-id="8070"></path>
+                <path
+                    d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                </path>
+            </svg>
+        </a>
+    </div>
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical center aligned">
+            <div class="ui vertical stripe container">
+                <div class="ui large secondary pointing menu">
+                    <a class="toc item">
+
+                        <svg class="icon" width="32" height="32" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M608 704a32 32 0 1 1 0 64h-512a32 32 0 1 1 0-64h512z m0-256a32 32 0 0 1 0 64h-512a32 32 0 0 1 0-64h512z m320-256a32 32 0 1 1 0 64h-832a32 32 0 0 1 0-64h832z"
+                                fill="#666666" p-id="4953"></path>
+                        </svg>
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  /* 下拉菜单的容器 */
-  .dropdown {
-    position: relative; /* 让下拉内容以按钮为基准定位 */
-    float: right; /* 使容器靠页面右侧 */
-    margin-top: 10px; /* 调整顶部间距 */
-  }
-  /* 按钮样式 */
-  .dropbtn {
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    background-color: #ffffff; /* 按钮背景颜色 */
-    color: black; /* 文字颜色 */
-  }
-  /* 下拉内容的样式 */
-  .dropdown-content {
-    display: none;
-    position: absolute; /* 基于父级的相对定位 */
-    top: 100%; /* 紧贴按钮下方 */
-    right: 0; /* 对齐到右侧 */
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* 确保在最上层 */
-  }
-  /* 下拉内容中的链接样式 */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  /* 鼠标悬停链接的样式 */
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  /* 显示下拉内容 */
-  .show {
-    display: block;
-  }
-</style>
+
+                        <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="background: #f2f2f2; border-radius: 8px; padding: 6px;">
+                            <rect x="8" y="10" width="16" height="2.5" rx="1.25" fill="#333"/>
+                            <rect x="8" y="18" width="16" height="2.5" rx="1.25" fill="#333"/>
+                        </svg> -->
+                    </a>
+                    <span class="mobile-title item">复旦多媒体智能安全实验室</span>
+                    <a href="./" class="ui logo icon image">
+                        <img src="./images/MAS_logo.png">
+                    </a>
+                    <a class="item" href="./index.html" style="font-size: 1.33rem;"><b>复旦大学多媒体智能安全实验室</b></a>
+                    <a class="active item" href="./index.html" style="font-size: 1.33rem;">首页</a>
+                    <!-- <a class="item" href="./projects.html">科研成果</a> -->
+                    <a class="item" href="./publications.html" style="font-size: 1.33rem;">论文发表</a>
+                    <a class="item" href="./opensources.html" style="font-size: 1.33rem;">开源项目</a>
+                    <!-- <a class="item" href="./publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+                    <!-- <a class="item" href="./member.html">团队成员</a> -->
+
+                    <a class="right item dropdown-toggle" href="./en/index.html">
+                        <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            width="32" height="32">
+                            <path
+                                d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                                p-id="8069"></path>
+                            <path
+                                d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                                p-id="8070"></path>
+                            <path
+                                d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!--      <div class="ui vertical stripe center aligned container">
+            <div class="ui container">
+                <h2 class="ui">
+                    <img src="./images/banner.png" width="100%"><br> 
+                </h2>
+            </div> 
+        </div>-->
 
 
-<!-- 下拉菜单容器 -->
-<div class="dropdown">
-  <!-- 按钮 -->
-  <button class="dropbtn" onclick="toggleDropdown()">Language</button>
-  <!-- 下拉菜单内容 -->
-  <div id="dropdownMenu" class="dropdown-content">
-    <a href="https://fdmas.github.io">English</a>
-    <a href="https://fdmas.github.io/zh.html">中文</a>
-  </div>
-</div>
-<script>
-// 切换下拉菜单的显示状态
-function toggleDropdown() {
-  document.getElementById("dropdownMenu").classList.toggle("show");
-}
-</script>
 
-<p>&nbsp;</p><h1 id='img-srcmaspng-altimage-20250103130027216-stylezoom4--fudan-mas'><img src="/MAS.png" alt="image-20250103130027216" style="zoom:4%;" /><span> </span><a href='https://fdmas.github.io'><span>Fudan MAS</span></a></h1><h2 id='introduction'><span>Introduction</span></h2><p><span>We are Multimedia &amp; Artifical Intelligence Security laboratory from the School of Computer Science in Fudan University.</span></p><p><span>The laboratory consists of three faculties (</span><a href='https://fdmas.github.io/xpzhang.html'><span>Zhang Xinpeng</span></a><span>, </span><a href='https://fdmas.github.io/zxqian.html'><span>Qian Zhenxing</span></a><span>, </span><a href='https://blazelisheng.github.io/'><span>Li Sheng</span></a><span>), some postdoctoral fellows, and many Ph.D. &amp; master students. MAS lab focuses on multimedia and artificial intelligence security, including topics of </span><strong><span>information hiding</span></strong><span>, </span><strong><span>multimedia forensics</span></strong><span>, </span><strong><span>artificial intelligence</span></strong><span> and </span><strong><span>multimedia applications</span></strong><span>. MAS lab has published over 400 academic papers many of which are published in the journals and conferences like IEEE TPAMI, TIFS, TIP, TDSC, TCSVT, TMM, TCYB, ICCV, NeurIPS, AAAI, IJCAI, and ACM MM.</span></p><p><span>Feel free to follow and support Fudan MAS Laboratory!</span></p><h2 id='news'><span>News</span></h2><p><span>[Dec 21, 2024] Congratulations to Zhaojun Guo and Wenqi Li for their papers being accepted by ICASSP 2025!</span></p><p><span>[Dec 10, 2024] Congratulations to Yuliang Xue, Lei Tan, Xiujian Liang for their papers being accepted by AAAI 2025!</span></p><p><span>[Oct 4, 2024] Congratulations to Zhaojun Guo for her paper being accepted by ACM MM Asia 2024!</span></p><p><span>[Sep 26, 2024] Congratulations to Junqiang Huang for his paper being accepted by NeurIPS 2024!</span></p><p><span>[Jul 27, 2024] Congratulations to Xiaoxiao Hu for her paper being accepted by IEEE TIFS!</span></p><p><span>[Jul 16, 2024] Congratulations to Jialiang Li, Haoyue Wang, Xuntao Liu, Yuzhou Yang, Guobiao Li, Xueying Mao, Xiaoxiao Hu, Ge Luo and Yuchen Ma for their papers being accepted by ACM MM 2024!</span></p><p><span>[Jul 4, 2024] Congratulations to Ysuzhou Yang and Yiran Xu for their papers being accepted by ECAI 2024!</span></p><p><span>[Feb 27, 2024] Congratulations to Guobiao Li for his paper being accepted by CVPR 2024!</span></p><p><a href='https://fdmas.github.io/news/'><span>more</span></a></p><h2 id='research'><span>Research</span></h2><p><span>Information Hiding</span></p><p><span>Multimedia Forensics</span></p><p><span>Security of Artificial Intelligence</span></p><p><span>Digital Watermarking</span></p><p><span>Medical Image Analysis</span></p><p><span>Computer Vision for Culture &amp; Tourism</span></p><p><img src="/WeChat.png" alt="image-20250103124747105" style="zoom: 33%;" /></p><center>Official WeChat Account</center><p>&nbsp;</p></div></div>
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">团队简介</h1>
+                <div class="ui divider"></div>
+                <p>复旦大学多媒体智能安全实验室(Fudan MAS)现有教师3位（<a href="./team/zhang.html">张新鹏</a>, <a href="https://tomzqian.github.io/">钱振兴</a>,
+                    <a
+                        href="https://blazelisheng.github.io/">李晟</a>）、在站博士后、多位在读博士生及在读硕士生，主要研究多媒体与人工智能安全，包括<b>多媒体安全</b>、<b>人工智能安全</b>、<b>AI应用</b>和<b>智能文旅</b>等四个方向。实验室团队已发表学术论文400余篇，多篇论文发表在IEEE
+                    TPAMI、TIFS、TIP、TDSC、TCSVT、TMM、TCYB、ICCV、NeurIPS、AAAI、IJCAI和ACM MM等顶刊顶会上。
+                </p>
+
+                <p>欢迎关注复旦MAS实验室！</p>
+            </div>
+
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">近期新闻</h1>
+                <div class="ui divider"></div>
+                <ul class='list'>
+                    <li class="list">[2025/05/08] 1篇论文被<b>IJCNN 2025</b>录用😊恭喜李美玲同学🎉
+                    <li class="list">[2025/04/29] 1篇论文被<b>IJCAI 2025</b>录用😊恭喜徐怡然同学🎉
+                    <li class="list">[2025/04/24] 1篇论文被<b>IEEE TDSC</b>录用😊恭喜周青同学🎉
+                    <li class="list">[2025/03/21] 1篇论文被<b>ICME 2025</b>录用😊恭喜谭磊同学🎉
+                    <li class="list">[2025/02/27] 2篇论文被<b>CVPR 2025</b>录用😊恭喜钟楠、刘高志同学🎉
+                    <li class="list">[2025/02/17] 1篇论文被<b>IEEE T-MM</b>录用😊恭喜刘高志同学🎉
+                    <li class="list">[2025/01/25] 1篇论文被<b>DASFAA 2025</b>录用😊恭喜王雅洁同学🎉
+                    <li class="list">[2025/01/17] 1篇论文被<b>IEEE TCSVT</b>录用😊恭喜王翌妃同学🎉
+                    <li class="list">[2024/12/21] 2篇论文被<b>ICASSP 2025</b>录用😊恭喜郭钊均、李文琪同学🎉
+                    <li class="list">[2024/12/10] 3篇论文被<b>AAAI 2025</b>录用😊恭喜薛禹良、谭磊、梁秀健同学🎉
+                    <li class="list">[2024/09/26] 1篇论文被<b>NeurIPS 2024</b>录用😊恭喜黄俊强同学🎉
+                </ul>
+            </div>
+
+
+
+
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">招生要求</h1>
+                <div class="ui divider"></div>
+
+                <p>欢迎校内外优秀保研推免生或考研成绩优异的同学申请本实验室攻读硕士或博士学位。本实验室长期专注于信息隐藏、真伪检测、AI安全及AI应用等前沿研究方向，课题紧贴实际场景，科研氛围开放，适合有志于在人工智能与安全交叉领域深入发展的同学深造。
+                </p>
+                <p>我们欢迎具备以下背景和能力的同学加入团队：</p>
+                <ul class='list'>
+
+
+                    <li class="list">具备扎实的<b>编程能力</b>，能熟练使用Python等常用开发语言；</li>
+
+                    <li class="list">熟悉<b>深度学习</b>基础理论，掌握主流框架如PyTorch、TensorFlow等；</li>
+
+                    <li class="list">具备计算机视觉、机器学习等相关知识背景；</li>
+
+                    <li class="list">热爱科研，具备独立思考和解决问题的能力；</li>
+
+                    <li class="list">具备良好的英文阅读和写作能力，能够熟练阅读英文论文；</li>
+
+                    <li class="list">拥有良好的团队协作精神与沟通执行力；</li>
+
+                    <li class="list">有计算机视觉、深度学习相关项目/竞赛/研究经验者优先考虑。</li>
+                </ul>
+
+                <p>有意者请将个人简历发送至 zxqian@fudan.edu.cn，邮件主题请注明：“申请普博/直博/硕士--姓名--专业--学校”。</p>
+
+
+            </div>
+
+
+
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                    <div class="ui horizontal inverted small divided link list">
+                        <!--                     本站访客数<span id="busuanzi_value_site_uv"></span>人次 -->
+                        <br> Copyright © Fudan MAS. 2019-2025
+                        <br> Interdisciplinary Building No. 2 A6010, Fudan University, Shanghai, China. 310027
+                        <br> All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Default Statcounter code for Whitzard-AI Lab https://whitzard-ai.github.io/
+-->
+
+
 </body>
+
 </html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)http://usslab.org/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Standard Meta -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properties -->
+    <title>Fudan MAS Lab</title>
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="复旦大学多媒体智能安全实验室;Fudan MAS;信息隐藏;真伪检测;AI安全;Fudan University">
+    <link rel="stylesheet" type="text/css" href="../css/semantic.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/MAS.png">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a69414783eb5d55f003e52981876f677";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/visibility.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    // autoplay: 2500,
+                });
+            });
+    </script>
+</head>
+<style type="text/css">
+    body {
+        padding-top: 50px;
+        /* 给固定顶部菜单留出空间 */
+    }
+
+    .hidden.menu {
+        display: none;
+    }
+
+    .masthead.segment {
+        min-height: 600px;
+        padding: 1em 0em;
+        background-color: red;
+    }
+
+    .masthead .logo.item img {
+        margin-right: 1em;
+    }
+
+    .masthead .ui.menu .ui.button {
+        margin-left: 0.5em;
+        color: red;
+
+    }
+
+    .masthead h1.ui.header {
+        margin-top: 3em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+    }
+
+    .largeheader {
+        margin-top: 3em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+    }
+
+    .masthead h2 {
+        font-size: 1.7em;
+        font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+        padding: 3em 0em;
+    }
+
+    .ui.vertical.stripe h3 {
+        font-size: 2em;
+    }
+
+    .ui.vertical.stripe .button+h3,
+    .ui.vertical.stripe p+h3 {
+        font-size: 1.33rem;
+        margin-top: 3em;
+    }
+
+    .ui.vertical.stripe .floated.image {
+        clear: both;
+    }
+
+    .ui.vertical.stripe p {
+        font-size: 1.33rem;
+    }
+
+    .ui.vertical.stripe .horizontal.divider {
+        margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+        padding: 0em;
+    }
+
+    .quote.stripe.segment .grid .column {
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+
+    .footer.segment {
+        padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+        display: none;
+    }
+
+    .top.fixed.menu .ftoc.item {
+        display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .ui.fixed.menu {
+            display: none !important;
+        }
+
+        .secondary.pointing.menu .item,
+        .secondary.pointing.menu .logo,
+        .secondary.pointing.menu .menu {
+            display: none;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: block;
+        }
+
+        .masthead.segment {
+            min-height: 350px;
+        }
+
+        .masthead h1.ui.header {
+            font-size: 2em;
+            margin-top: 1.5em;
+        }
+
+        .masthead h2 {
+            margin-top: 0.5em;
+            font-size: 1.5em;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+
+        .ui.fixed.menu {
+            display: none !important;
+        }
+
+        .top.fixed.menu .item,
+        .top.fixed.menu .menu {
+            display: none;
+        }
+
+        .top.fixed.menu .ftoc.item {
+            display: block;
+        }
+
+    }
+
+
+
+
+    .logo.image {
+        width: 100px;
+        margin-right: 1px;
+    }
+
+    .galary {
+        margin-top: 20px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 600rpx;
+        background-color: white
+    }
+
+    .beian:hover {
+        color: white;
+    }
+
+    .beian {
+        color: grey;
+    }
+
+    .list {
+        font-size: 1.33rem;
+        line-height: 150%;
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        pointer-events: none;
+    }
+
+    .mobile-title {
+        display: none !important;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .mobile-title {
+            display: block !important;
+        }
+
+
+    }
+
+
+    /* 代表工作样式 */
+    .research-area {
+        margin-bottom: 40px;
+    }
+
+    .area-title {
+        font-size: 1.8em;
+        color: #133271;
+        margin-bottom: 20px;
+        border-left: 4px solid #133271;
+        padding-left: 10px;
+    }
+
+    .publication {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .pub-image {
+        flex: 0 0 180px;
+        margin-right: 20px;
+        position: relative;
+    }
+
+    .pub-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .pub-content {
+        flex: 1;
+    }
+
+    .pub-title {
+        font-size: 1.33rem;
+        font-weight: bold;
+        color: #133271;
+        text-decoration: none;
+    }
+
+    .pub-title:hover {
+        text-decoration: underline;
+        color: #1e4696;
+    }
+
+    .pub-meta {
+        font-size: 1.2em;
+        color: #666;
+        margin: 6px 0;
+    }
+
+    .pub-description {
+        font-size: 1.2em;
+        color: #444;
+    }
+
+    .conference-label {
+        position: absolute;
+        top: 5px;
+        left: -5px;
+        background-color: #00369f;
+        color: white;
+        padding: 0 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 3px;
+        display: inline-block;
+        height: 20px;
+        text-align: center;
+        width: auto;
+    }
+
+    @media (max-width: 768px) {
+        .publication {
+            flex-direction: column;
+        }
+
+        .pub-image {
+            margin-bottom: 10px;
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="../images/MAS_logo.png"> Fudan MAS Lab
+            </a>
+            <a class="active item" href="./index.html" style="font-size:1.33rem;">HomePage</a>
+            <!-- <a class="item" href="./projects.html">Projects</a> -->
+            <a class="item" href="./publications.html" style="font-size:1.33rem;">Publications</a>
+            <a class="item" href="./opensources.html" style="font-size:1.33rem;">OpenSources</a>
+            <!-- <a class="item" href="./publications.html" style="font-size:1.33rem;">HighLights</a> -->
+            <!-- <a class="item" href="./member.html">Members</a> -->
+
+            <a class="right item dropdown-toggle" href="../index.html">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32">
+                    <path
+                        d="M579.584 478.208h-9.728l37.376 207.872c24.576-8.704 47.104-22.016 67.072-39.424-20.48-24.576-36.864-52.224-49.664-81.408l39.424-5.12c10.752 22.016 23.04 41.984 37.376 58.88 29.184-35.328 51.2-82.432 67.072-141.312l-188.928 0.512z m148.992 168.448c22.528 19.456 48.128 33.792 76.8 42.496l17.92 5.632-10.752 38.4-17.92-5.632c-34.304-10.752-66.048-28.672-93.184-52.736-25.088 22.528-54.784 39.936-87.04 50.688l25.088 140.288H489.984l-19.968 91.648H939.52c22.016 0 39.936-17.92 39.936-39.936V238.592c0-22.016-17.92-39.936-39.936-39.936H520.192l31.232 174.08-1.024-0.512 3.584 18.944 0.512-2.56 8.704 49.664h96.768v-39.936h74.752v39.936h124.928v39.936h-52.224c-17.408 70.144-44.032 126.464-78.848 168.448zM449.024 865.28H84.992c-44.032 0-79.872-35.84-79.872-79.872v-678.4c0-44.544 35.84-79.872 79.872-79.872h399.36l24.576 131.584h430.08c44.032 0 79.872 35.84 79.872 79.872v678.912c0 44.032-35.84 79.872-79.872 79.872H420.352l28.672-132.096z m-188.416-307.2v-41.984H181.76v-61.952h73.216v-41.472H181.76v-52.736h78.848v-41.472H135.68V558.08h124.928z m192.512 0V438.272c0-21.504-5.12-38.4-14.848-50.176-9.728-11.776-24.576-17.408-44.032-17.408-11.264 0-21.504 2.048-30.208 6.656s-15.872 11.776-20.48 20.48h-2.56l-6.144-23.552h-34.816V558.08h45.056v-86.528c0-21.504 3.072-36.864 8.704-46.592 5.632-9.216 14.848-13.824 27.648-13.824 9.216 0 15.872 3.072 20.48 9.728 4.096 6.656 6.656 16.384 6.656 29.696v107.52h44.544z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical sidebar menu">
+        <div class="item">
+            <a href="./" class="ui logo icon image">
+                <img src="../images/MAS_logo.png">
+            </a>
+            <!-- <a href="./index.html"><b>复旦大学多媒体智能安全实验室</b></a> -->
+        </div>
+        <a class="active item" href="./index.html" style="font-size:1.33rem;">HomePage</a>
+        <!-- <a class="item" href="./projects.html">Projects</a> -->
+        <a class="item" href="./publications.html" style="font-size:1.33rem;">Publications</a>
+        <a class="item" href="./opensources.html" style="font-size:1.33rem;">OpenSources</a>
+            <!-- <a class="item" href="./publications.html" style="font-size:1.33rem;">HighLights</a> -->
+        <!-- <a class="item" href="./member.html">Members</a> -->
+
+        <a class="right item dropdown-toggle" href="../index.html">
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                height="32">
+                <path
+                    d="M579.584 478.208h-9.728l37.376 207.872c24.576-8.704 47.104-22.016 67.072-39.424-20.48-24.576-36.864-52.224-49.664-81.408l39.424-5.12c10.752 22.016 23.04 41.984 37.376 58.88 29.184-35.328 51.2-82.432 67.072-141.312l-188.928 0.512z m148.992 168.448c22.528 19.456 48.128 33.792 76.8 42.496l17.92 5.632-10.752 38.4-17.92-5.632c-34.304-10.752-66.048-28.672-93.184-52.736-25.088 22.528-54.784 39.936-87.04 50.688l25.088 140.288H489.984l-19.968 91.648H939.52c22.016 0 39.936-17.92 39.936-39.936V238.592c0-22.016-17.92-39.936-39.936-39.936H520.192l31.232 174.08-1.024-0.512 3.584 18.944 0.512-2.56 8.704 49.664h96.768v-39.936h74.752v39.936h124.928v39.936h-52.224c-17.408 70.144-44.032 126.464-78.848 168.448zM449.024 865.28H84.992c-44.032 0-79.872-35.84-79.872-79.872v-678.4c0-44.544 35.84-79.872 79.872-79.872h399.36l24.576 131.584h430.08c44.032 0 79.872 35.84 79.872 79.872v678.912c0 44.032-35.84 79.872-79.872 79.872H420.352l28.672-132.096z m-188.416-307.2v-41.984H181.76v-61.952h73.216v-41.472H181.76v-52.736h78.848v-41.472H135.68V558.08h124.928z m192.512 0V438.272c0-21.504-5.12-38.4-14.848-50.176-9.728-11.776-24.576-17.408-44.032-17.408-11.264 0-21.504 2.048-30.208 6.656s-15.872 11.776-20.48 20.48h-2.56l-6.144-23.552h-34.816V558.08h45.056v-86.528c0-21.504 3.072-36.864 8.704-46.592 5.632-9.216 14.848-13.824 27.648-13.824 9.216 0 15.872 3.072 20.48 9.728 4.096 6.656 6.656 16.384 6.656 29.696v107.52h44.544z">
+                </path>
+            </svg>
+        </a>
+    </div>
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical center aligned">
+            <div class="ui vertical stripe container">
+                <div class="ui large secondary pointing menu">
+                    <a class="toc item">
+
+                        <svg class="icon" width="32" height="32" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M608 704a32 32 0 1 1 0 64h-512a32 32 0 1 1 0-64h512z m0-256a32 32 0 0 1 0 64h-512a32 32 0 0 1 0-64h512z m320-256a32 32 0 1 1 0 64h-832a32 32 0 0 1 0-64h832z"
+                                fill="#666666" p-id="4953"></path>
+                        </svg>
+
+
+
+                        <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="background: #f2f2f2; border-radius: 8px; padding: 6px;">
+                            <rect x="8" y="10" width="16" height="2.5" rx="1.25" fill="#333"/>
+                            <rect x="8" y="18" width="16" height="2.5" rx="1.25" fill="#333"/>
+                        </svg> -->
+                    </a>
+                    <span class="mobile-title item">Fudan MAS Lab</span>
+                    <a href="./" class="ui logo icon image">
+                        <img src="../images/MAS_logo.png">
+                    </a>
+                    <a class="item" href="./index.html" style="font-size:1.33rem;"><b>Fudan MAS Lab</b></a>
+                    <a class="active item" href="./index.html" style="font-size:1.33rem;">HomePage</a>
+                    <!-- <a class="item" href="./projects.html">Projects</a> -->
+                    <a class="item" href="./publications.html" style="font-size:1.33rem;">Publications</a>
+                    <a class="item" href="./opensources.html" style="font-size:1.33rem;">OpenSources</a>
+                    <!-- <a class="item" href="./publications.html" style="font-size:1.33rem;">HighLights</a> -->
+                    <!-- <a class="item" href="./member.html">Members</a> -->
+
+                    <a class="right item dropdown-toggle" href="../index.html">
+                        <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            width="32" height="32">
+                            <path
+                                d="M579.584 478.208h-9.728l37.376 207.872c24.576-8.704 47.104-22.016 67.072-39.424-20.48-24.576-36.864-52.224-49.664-81.408l39.424-5.12c10.752 22.016 23.04 41.984 37.376 58.88 29.184-35.328 51.2-82.432 67.072-141.312l-188.928 0.512z m148.992 168.448c22.528 19.456 48.128 33.792 76.8 42.496l17.92 5.632-10.752 38.4-17.92-5.632c-34.304-10.752-66.048-28.672-93.184-52.736-25.088 22.528-54.784 39.936-87.04 50.688l25.088 140.288H489.984l-19.968 91.648H939.52c22.016 0 39.936-17.92 39.936-39.936V238.592c0-22.016-17.92-39.936-39.936-39.936H520.192l31.232 174.08-1.024-0.512 3.584 18.944 0.512-2.56 8.704 49.664h96.768v-39.936h74.752v39.936h124.928v39.936h-52.224c-17.408 70.144-44.032 126.464-78.848 168.448zM449.024 865.28H84.992c-44.032 0-79.872-35.84-79.872-79.872v-678.4c0-44.544 35.84-79.872 79.872-79.872h399.36l24.576 131.584h430.08c44.032 0 79.872 35.84 79.872 79.872v678.912c0 44.032-35.84 79.872-79.872 79.872H420.352l28.672-132.096z m-188.416-307.2v-41.984H181.76v-61.952h73.216v-41.472H181.76v-52.736h78.848v-41.472H135.68V558.08h124.928z m192.512 0V438.272c0-21.504-5.12-38.4-14.848-50.176-9.728-11.776-24.576-17.408-44.032-17.408-11.264 0-21.504 2.048-30.208 6.656s-15.872 11.776-20.48 20.48h-2.56l-6.144-23.552h-34.816V558.08h45.056v-86.528c0-21.504 3.072-36.864 8.704-46.592 5.632-9.216 14.848-13.824 27.648-13.824 9.216 0 15.872 3.072 20.48 9.728 4.096 6.656 6.656 16.384 6.656 29.696v107.52h44.544z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!--      <div class="ui vertical stripe center aligned container">
+            <div class="ui container">
+                <h2 class="ui">
+                    <img src="./images/banner.png" width="100%"><br> 
+                </h2>
+            </div> 
+        </div>-->
+
+
+
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">Team Introduction</h1>
+                <div class="ui divider"></div>
+                <p>
+                    The Multimedia & Artifical Intelligence Security laboratory from the School of Computer Science in
+                    Fudan University (Fudan MAS) currently has three faculty members (<a href="">Xinpeng Zhang</a>, <a
+                        href="https://tomzqian.github.io/">Zhenxing Qian</a>, <a
+                        href="https://blazelisheng.github.io/">Sheng Li</a>), along with
+                    postdoctoral researchers, Ph.D. students, and master’s students. The lab focuses on multimedia and
+                    AI security,
+                    with research directions covering <b>Multimedia Security</b>, <b>AI Security</b>, <b>AI Applications</b>, and <b>Intelligent Cultural Tourism</b>.
+                    The team has published over 400 academic papers, including top-tier journals and conferences such as
+                    IEEE TPAMI, TIFS, TIP, TDSC, TCSVT, TMM, TCYB, ICCV, NeurIPS, AAAI, IJCAI, and ACM MM.
+                    </p>
+                <p>We welcome you to follow Fudan MAS Laboratory!</p>
+            </div>
+
+            <!-- Recent News -->
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">Recent News</h1>
+                <div class="ui divider"></div>
+                <ul class='list'>
+                    <li>[2025/05/08] One paper accepted by <b>IJCNN 2025</b> 🎉 Congratulations to Meiling Li!</li>
+                    <li>[2025/04/29] One paper accepted by <b>IJCAI 2025</b> 🎉 Congratulations to Yiran Xu!</li>
+                    <li>[2025/04/24] One paper accepted by <b>IEEE TDSC</b> 🎉 Congratulations to Qing Zhou!</li>
+                    <li>[2025/03/21] One paper accepted by <b>ICME 2025</b> 🎉 Congratulations to Lei Tan!</li>
+                    <li>[2025/02/27] Two papers accepted by <b>CVPR 2025</b> 🎉 Congratulations to Nan Zhong and Gaozhi
+                        Liu!</li>
+                    <li>[2025/02/17] One paper accepted by <b>IEEE TMM</b> 🎉 Congratulations to Gaozhi Liu!</li>
+                    <li>[2025/01/25] One paper accepted by <b>DASFAA 2025</b> 🎉 Congratulations to Yajie Wang!</li>
+                    <li>[2025/01/17] One paper accepted by <b>IEEE TCSVT</b> 🎉 Congratulations to Yifei Wang!</li>
+                    <li>[2024/12/21] Two papers accepted by <b>ICASSP 2025</b> 🎉 Congratulations to Zhaojun Guo and
+                        Wenqi Li!</li>
+                    <li>[2024/12/10] Three papers accepted by <b>AAAI 2025</b> 🎉 Congratulations to Yuliang Xue, Lei
+                        Tan, and Xiujian Liang!</li>
+                    <li>[2024/09/26] One paper accepted by <b>NeurIPS 2024</b> 🎉 Congratulations to Junqiang Huang!
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+            <!-- Admission Requirements -->
+            <div class="ui vertical stripe container segment">
+                <h1 style="color: rgb(19, 50, 113);">Application Requirements</h1>
+                <div class="ui divider"></div>
+                <p>We welcome outstanding candidates, both from Fudan University and other institutions, to apply for
+                    Master's or Ph.D. positions in our lab, either through recommendation (for postgraduate exemption)
+                    or via excellent performance in the graduate entrance examination. Our lab focuses on cutting-edge
+                    research areas such as information hiding, authenticity verification, AI security, and AI
+                    applications. We emphasize real-world relevance, maintain an open academic environment, and are
+                    well-suited for students aspiring to conduct in-depth research at the intersection of artificial
+                    intelligence and security.</p>
+                <p>We are looking for students with the following background and abilities:</p>
+                <ul class='list'>
+                    <li class="list"><b>Strong programming skills</b>, with proficiency in Python and other commonly
+                        used programming languages;</li>
+                    <li class="list">A solid understanding of <b>deep learning</b> fundamentals and experience with
+                        major frameworks such as PyTorch or TensorFlow;</li>
+                    <li class="list">Background knowledge in computer vision and machine learning;</li>
+                    <li class="list">A passion for research, with the ability to think independently and solve problems;
+                    </li>
+                    <li class="list">Good English reading and writing skills, with the ability to read academic papers
+                        fluently;</li>
+                    <li class="list">Strong teamwork, communication, and execution skills;</li>
+                    <li class="list">Prior experience in computer vision, deep learning-related projects, competitions,
+                        or research is a plus.</li>
+                </ul>
+                <p>If interested, please send your CV to <b>zxqian@fudan.edu.cn</b>. Please use the subject line:
+                    “Application for Ph.D./Master – Your Name – Major – University”.</p>
+            </div>
+
+
+
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                    <div class="ui horizontal inverted small divided link list">
+                        <!--                     本站访客数<span id="busuanzi_value_site_uv"></span>人次 -->
+                        <br> Copyright © Fudan MAS. 2019-2025
+                        <br> Interdisciplinary Building No. 2 A6010, Fudan University, Shanghai, China. 310027
+                        <br> All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Default Statcounter code for Whitzard-AI Lab https://whitzard-ai.github.io/
+-->
+
+
+</body>
+
+</html>
