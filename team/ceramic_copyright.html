@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)http://usslab.org/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Standard Meta -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properties -->
+    <title>复旦大学多媒体智能安全实验室</title>
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="复旦大学多媒体智能安全实验室;Fudan MAS;信息隐藏;真伪检测;AI安全;Fudan University">
+    <link rel="stylesheet" type="text/css" href="../css/semantic.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/MAS.png">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a69414783eb5d55f003e52981876f677";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+            /* 给固定顶部菜单留出空间 */
+        }
+
+        .hidden.menu {
+            display: none;
+        }
+
+        .masthead.segment {
+            min-height: 600px;
+            padding: 1em 0em;
+            background-color: red;
+        }
+
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
+
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+            color: red;
+
+        }
+
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
+
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+
+        .ui.vertical.stripe p {
+            font-size: 1.33rem;
+        }
+
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+
+            .masthead.segment {
+                min-height: 350px;
+            }
+
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
+
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
+
+        }
+
+
+
+
+        .logo.image {
+            width: 100px;
+            margin-right: 1px;
+        }
+
+        .galary {
+            margin-top: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 600rpx;
+            background-color: white
+        }
+
+        .beian:hover {
+            color: white;
+        }
+
+        .beian {
+            color: grey;
+        }
+
+        .list {
+            font-size: 1.33rem;
+            line-height: 150%;
+        }
+
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        .mobile-title {
+            display: none !important;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .mobile-title {
+                display: block !important;
+            }
+
+
+        }
+
+
+        /* 代表工作样式 */
+        .research-area {
+            margin-bottom: 40px;
+        }
+
+        .area-title {
+            font-size: 1.8em;
+            color: #133271;
+            margin-bottom: 20px;
+            border-left: 4px solid #133271;
+            padding-left: 10px;
+        }
+
+        .publication {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .pub-image {
+            flex: 0 0 180px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .pub-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-title {
+            font-size: 1.33rem;
+            font-weight: bold;
+            color: #133271;
+            text-decoration: none;
+        }
+
+        .pub-title:hover {
+            text-decoration: underline;
+            color: #1e4696;
+        }
+
+        .pub-meta {
+            font-size: 1.2em;
+            color: #666;
+            margin: 6px 0;
+        }
+
+        .pub-description {
+            font-size: 1.2em;
+            color: #444;
+        }
+
+        .conference-label {
+            position: absolute;
+            top: 5px;
+            left: -5px;
+            background-color: #00369f;
+            color: white;
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 3px;
+            display: inline-block;
+            height: 20px;
+            text-align: center;
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .publication {
+                flex-direction: column;
+            }
+
+            .pub-image {
+                margin-bottom: 10px;
+                margin-right: 0;
+                width: 100%;
+            }
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 40px auto;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .profile-photo {
+            flex: 0 0 180px;
+            margin-right: 30px;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .profile-info b {
+            color: #000;
+        }
+
+        .profile-info a {
+            color: #1a4fa3;
+            text-decoration: none;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/visibility.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    // autoplay: 2500,
+                });
+            });
+    </script>
+</head>
+
+<body>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="../images/MAS_logo.png"> 复旦大学多媒体智能安全实验室
+            </a>
+            <a class="item" href="../index.html" style="font-size: 1.33rem;">首页</a>
+            <!-- <a class="item" href="../projects.html">科研成果</a> -->
+            <a class="item" href="../publications.html" style="font-size: 1.33rem;">论文发表</a>
+            <a class="active item" href="../opensources.html" style="font-size: 1.33rem;">开源项目</a>
+            <!-- <a class="item" href="../publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+            <!-- <a class="item" href="../member.html">团队成员</a> -->
+
+            <!-- <a class="right item dropdown-toggle" href="../en/index.html">
+                <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32">
+                    <path
+                        d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                        p-id="8069"></path>
+                    <path
+                        d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                        p-id="8070"></path>
+                    <path
+                        d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                    </path>
+                </svg>
+            </a> -->
+        </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical sidebar menu">
+        <div class="item">
+            <a href="../" class="ui logo icon image">
+                <img src="../images/MAS_logo.png">
+            </a>
+            <!-- <a href="../index.html"><b>复旦大学多媒体智能安全实验室</b></a> -->
+        </div>
+        <a class="item" href="../index.html" style="font-size: 1.33rem;">首页</a>
+        <!-- <a class="item" href="../projects.html">科研成果</a> -->
+        <a class="item" href="../publications.html" style="font-size: 1.33rem;">论文发表</a>
+        <a class="active item" href="../opensources.html" style="font-size: 1.33rem;">开源项目</a>
+        <!-- <a class="item" href="../publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+        <!-- <a class="item" href="../member.html">团队成员</a> -->
+
+        <!-- <a class="right item dropdown-toggle" href="../en/index.html">
+            <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                height="32">
+                <path
+                    d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                    p-id="8069"></path>
+                <path
+                    d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                    p-id="8070"></path>
+                <path
+                    d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                </path>
+            </svg>
+        </a> -->
+    </div>
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical center aligned">
+            <div class="ui vertical stripe container">
+                <div class="ui large secondary pointing menu">
+                    <a class="toc item">
+
+                        <svg class="icon" width="32" height="32" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M608 704a32 32 0 1 1 0 64h-512a32 32 0 1 1 0-64h512z m0-256a32 32 0 0 1 0 64h-512a32 32 0 0 1 0-64h512z m320-256a32 32 0 1 1 0 64h-832a32 32 0 0 1 0-64h832z"
+                                fill="#666666" p-id="4953"></path>
+                        </svg>
+
+
+
+                        <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="background: #f2f2f2; border-radius: 8px; padding: 6px;">
+                            <rect x="8" y="10" width="16" height="2.5" rx="1.25" fill="#333"/>
+                            <rect x="8" y="18" width="16" height="2.5" rx="1.25" fill="#333"/>
+                        </svg> -->
+                    </a>
+                    <span class="mobile-title item">复旦多媒体智能安全实验室</span>
+                    <a href="../" class="ui logo icon image">
+                        <img src="../images/MAS_logo.png">
+                    </a>
+                    <a class="item" href="../index.html" style="font-size: 1.33rem;"><b>复旦大学多媒体智能安全实验室</b></a>
+                    <a class="item" href="../index.html" style="font-size: 1.33rem;">首页</a>
+                    <!-- <a class="item" href="../projects.html">科研成果</a> -->
+                    <a class="item" href="../publications.html" style="font-size: 1.33rem;">论文发表</a>
+                    <a class="active item" href="../opensources.html" style="font-size: 1.33rem;">开源项目</a>
+                    <!-- <a class="item" href="../publications.html" style="font-size: 1.33rem;">师生风采</a> -->
+
+                    <!-- <a class="right item dropdown-toggle" href="../en/publications.html">
+                        <svg class="icon" viewBox="0 0 1070 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            width="32" height="32">
+                            <path
+                                d="M232.582 358.133c12.288 36.33 32.59 67.851 60.905 95.633 24.042-26.18 42.207-58.235 53.96-95.633H232.583z"
+                                p-id="8069"></path>
+                            <path
+                                d="M981.615 143.36H532.836L507.192 6.055H90.468C44.522 6.055 7.123 43.453 7.123 89.4v708.43c0 45.946 37.399 83.344 83.345 83.344h379.86l-30.453 137.305h541.74c45.947 0 83.345-37.398 83.345-83.344v-708.43c0-45.947-37.398-83.345-83.345-83.345zM415.833 564.358c-49.152-18.165-89.756-41.139-122.346-67.852-34.192 30.453-76.933 52.892-126.62 66.783l-17.096-28.316c48.618-12.822 89.222-32.055 121.277-59.303-33.124-33.658-56.097-72.66-68.92-117.003h-46.48v-32.056h121.277c-7.48-13.89-17.096-27.247-28.316-40.07l32.056-11.753c11.22 14.425 21.37 31.522 30.453 51.29h115.935v32.055h-46.481c-14.96 45.946-36.33 84.413-64.646 115.4 31.522 25.11 71.057 45.947 117.538 63.043l-17.631 27.782zM1023.288 934.6c0 22.974-18.7 41.673-41.673 41.673H492.232l20.837-95.633h156.538l-89.222-497.397-0.534 2.671-3.74-19.767 1.069 0.534-32.59-181.649h437.56c22.973 0 41.672 18.7 41.672 41.673V934.6z"
+                                p-id="8070"></path>
+                            <path
+                                d="M684.566 541.384h114.866v-30.453H684.566v-60.905h122.346v-30.453H648.771V638.62h162.95v-30.453H684.565v-66.783zM924.45 475.67c-9.616 0-18.164 1.603-26.178 5.877-7.48 3.74-14.96 9.617-20.837 17.096v-18.699h-34.727V638.62h34.727v-95.633c1.069-12.822 5.343-22.439 12.823-29.384 6.41-5.877 13.89-9.083 22.439-9.083 24.041 0 35.795 12.823 35.795 39.001v94.565h34.727v-97.77c1.069-43.275-19.233-64.646-58.769-64.646z">
+                            </path>
+                        </svg>
+                    </a> -->
+                </div>
+            </div>
+            <!--      <div class="ui vertical stripe center aligned container">
+            <div class="ui container">
+                <h2 class="ui">
+                    <img src=".../images/banner.png" width="100%"><br> 
+                </h2>
+            </div> 
+        </div>-->
+
+
+
+            <div class="ui vertical stripe container">
+                <h1 style="color: rgb(15, 7, 125);">陶瓷防伪：Embedding Robust Watermarking into Pattern to Protect the Copyright of Ceramic Artifacts</h1>
+                <div class="ui divider"></div>
+
+                <h2 style="color: rgb(19, 50, 113);">应用场景</h2>
+                <div class="ui divider"></div>
+                <p>
+                    &ensp;&ensp;&ensp;&ensp;由于陶瓷艺术品市场存在巨大的经济利益，致使假冒伪劣产品大量出现，如 2020 年至 2023 年间某地有众多陶瓷艺术伪造案件。所以，在陶瓷艺术品的交易、收藏、拍卖等环节，都需要专业的鉴定人员和科学的鉴定方法来辨别真伪，以维护市场秩序和保护收藏者的权益。相关的鉴定机构、文物部门以及收藏爱好者等都会积极学习和应用各种陶瓷鉴定知识与技术，包括对陶瓷的胎质、釉色、绘画风格、烧制工艺等方面的分析研究，来确保陶瓷艺术品的真实性。
+                </p>
+                <p>
+                    &ensp;&ensp;&ensp;&ensp;本研究提出了一种不可见的陶瓷防伪方案，旨在应对陶瓷艺术品市场中假冒伪劣产品泛滥的问题。该方案通过在数字图案中嵌入不可见水印信息，再利用釉上彩烤花技术，将带有水印的图案与陶瓷经高温烘烤后永久结合，以此实现陶瓷的防伪功能，确保陶瓷作品的真实性。
+                </p>
+                <h2 style="color: rgb(19, 50, 113);">陶瓷烤花工艺</h2>
+                <div class="ui divider"></div>
+                <p>
+                    &ensp;&ensp;&ensp;&ensp;陶瓷制造工艺可以大致分为两类:手绘（Hand-painting）和贴花(Decal)。本研究主要关注贴花技术。
+                </p>
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="../images/process.gif" alt="陶瓷烤花工艺"
+                        style="max-width: 80%; height: auto; border: 1px solid #ccc;" />
+                </div>
+
+
+                <h2 style="color: rgb(19, 50, 113);">方法架构</h2>
+                <div class="ui divider"></div>
+                <p>
+                    &ensp;&ensp;&ensp;&ensp;我们提出的方法的框架主要包括三个部分:基于模板的水印嵌入模块，用于将水印嵌入到封面图像中以生成带水印的图像；失真模块，其由陶瓷图案贴花以及拍摄场景中产生的失真模拟；以及基于学习的水印提取模块，用于训练深度解码器以从失真的带水印的图像中提取隐藏数据。
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="../images/ceramic.png" alt="方法架构"
+                        style="max-width: 80%; height: auto; border: 1px solid #ccc;" />
+                </div>
+                </p>
+
+                <h2 style="color: rgb(19, 50, 113);">效果展示</h2>
+                <div class="ui divider"></div>
+                <p>
+                    &ensp;&ensp;&ensp;&ensp;在实际应用中，我们将水印信息嵌入到图案中，并将其通过贴花技术烧窑至瓷砖上。通过拍照提取水印信息，最后通过<a href="https://en.wikipedia.org/wiki/BCH_code">BCH纠错码</a>实现防伪认证。
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="../images/ceramic.gif" alt="效果展示"
+                        style="max-width: 80%; height: auto; border: 1px solid #ccc;" />
+                </div>
+                </p>
+
+                <h2 style="color: rgb(19, 50, 113);">工作详情</h2>
+                <div class="ui divider"></div>
+                <p>
+                    工作详情见<a
+                        href="https://ojs.aaai.org/index.php/AAAI/article/view/32062">原文</a>，如需更多信息，请联系我们：leitan23@m.fudan.edu.cn
+                </p>
+            </div>
+
+
+
+
+
+
+
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                    <div class="ui horizontal inverted small divided link list">
+                        <!--                     本站访客数<span id="busuanzi_value_site_uv"></span>人次 -->
+                        <br> Copyright © Fudan MAS. 2019-2025
+                        <br> Interdisciplinary Building No. 2 A6010, Fudan University, Shanghai, China. 310027
+                        <br> All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
